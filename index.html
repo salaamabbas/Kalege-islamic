@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>KICYYSO – Kalege Islamic Children &amp; Youth Support Organization</title>
+<meta name="description" content="KICYYSO supports orphans and vulnerable children in  Uganda through education, healthcare and Islamic values. Donate today."/>
+<meta property="og:title" content="KICYYSO – Transforming Lives in Uganda"/>
+<meta property="og:description" content="Supporting orphans and vulnerable children in  Uganda."/>
+<meta property="og:type" content="website"/>
+<meta name="theme-color" content="#1a5c3a"/>
+<!--
+  FAVICON: Replace FAVICON_URL_HERE with your logo/favicon image URL.
+  For GitHub Pages, you can also place a favicon.ico in the root folder.
+-->
+<link rel="icon" type="image/png" href="FAVICON_URL_HERE"/>
+<link rel="apple-touch-icon" href="logo.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+/* ============================================================
+   RESET
+============================================================ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Inter',sans-serif;color:#2a2a2a;background:#fff;line-height:1.65;overflow-x:hidden}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+
+/* ============================================================
+   TOKENS
+============================================================ */
+:root{
+  --g1:#0f3d25;
+  --g2:#1a5c3a;
+  --g3:#237a4e;
+  --gold:#c49a1a;
+  --gold2:#e8c040;
+  --cream:#f8f5ef;
+  --border:#e0d9ce;
+  --muted:#6b7280;
+  --r:12px;
+  --sh:0 4px 24px rgba(0,0,0,.10);
+  --shd:0 12px 48px rgba(0,0,0,.18);
+}
+
+/* ============================================================
+   UTILITIES
+============================================================ */
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.sec{padding:88px 0}
+.sec-sm{padding:56px 0}
+.serif{font-family:'Playfair Display',serif}
+.tag{
+  display:inline-block;
+  font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gold);background:rgba(196,154,26,.12);border:1px solid rgba(196,154,26,.3);
+  padding:4px 14px;border-radius:40px;margin-bottom:14px;
+}
+.tag-light{color:#fff;background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.25)}
+h2.title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.8vw,2.6rem);color:#111;line-height:1.2;margin-bottom:14px}
+h2.title-w{color:#fff}
+p.sub{font-size:.97rem;color:var(--muted);max-width:540px;line-height:1.75}
+p.sub-w{color:rgba(255,255,255,.76)}
+.tc{text-align:center}.tc .sub{margin:0 auto}
+
+/* ============================================================
+   BUTTONS
+============================================================ */
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 28px;border-radius:10px;
+  font-size:.92rem;font-weight:700;
+  border:2px solid transparent;
+  transition:transform .2s,box-shadow .2s,background .2s,border-color .2s;
+  cursor:pointer;white-space:nowrap;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:var(--gold);color:#fff;border-color:var(--gold)}
+.btn-gold:hover{background:#a8800f;border-color:#a8800f;box-shadow:0 8px 24px rgba(196,154,26,.4)}
+.btn-green{background:var(--g2);color:#fff;border-color:var(--g2)}
+.btn-green:hover{background:var(--g3);border-color:var(--g3);box-shadow:0 8px 24px rgba(26,92,58,.4)}
+.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+.btn-ghost:hover{background:rgba(255,255,255,.12);border-color:#fff}
+.btn-outline{background:transparent;color:var(--g2);border-color:var(--g2)}
+.btn-outline:hover{background:var(--g2);color:#fff}
+
+/* ============================================================
+   NAVBAR
+============================================================ */
+#nav{
+  position:fixed;top:0;left:0;right:0;z-index:999;
+  background:rgba(15,61,37,.96);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,.07);
+  transition:box-shadow .3s;
+}
+#nav.scrolled{box-shadow:0 4px 28px rgba(0,0,0,.3)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.logo{display:flex;align-items:center;gap:11px;cursor:pointer}
+.logo-gem{
+  width:100px;
+  height:100px;
+  flex-shrink:0;
+}
+
+.logo-gem img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+}
+.logo-mono{display:none;width:100%;height:100%;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#fff}
+.logo-text strong{display:block;color:#fff;font-size:.94rem;font-weight:700}
+.logo-text small{color:rgba(255,255,255,.5);font-size:.58rem;letter-spacing:.06em;text-transform:uppercase}
+.nav-links{display:flex;align-items:center;gap:2px;list-style:none}
+.nav-links a{
+  color:rgba(255,255,255,.75);font-size:.87rem;font-weight:500;
+  padding:8px 14px;border-radius:8px;cursor:pointer;
+  transition:color .18s,background .18s;
+}
+.nav-links a:hover,.nav-links a.on{color:#fff;background:rgba(255,255,255,.1)}
+.nav-links .cta{background:var(--gold)!important;color:#fff!important;font-weight:700!important}
+.nav-links .cta:hover{background:#a8800f!important}
+.burger{display:none;flex-direction:column;gap:5px;padding:6px;cursor:pointer}
+.burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all .28s}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob{
+  display:none;position:absolute;top:68px;left:0;right:0;
+  background:var(--g1);border-top:1px solid rgba(255,255,255,.07);
+  padding:12px 20px 20px;
+}
+.mob.open{display:block;animation:slideDown .22s ease}
+@keyframes slideDown{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+.mob a{
+  display:block;color:rgba(255,255,255,.8);padding:13px 14px;
+  font-size:.95rem;font-weight:500;border-radius:9px;cursor:pointer;
+  transition:background .18s;
+}
+.mob a:hover{background:rgba(255,255,255,.1)}
+.mob .mcta{background:var(--gold);color:#fff!important;font-weight:700;text-align:center;margin-top:8px}
+
+/* ============================================================
+   PAGES
+============================================================ */
+.page{display:none;padding-top:68px}
+.page.active{display:block}
+
+/* ============================================================
+   FADE-IN ANIMATION ENGINE
+============================================================ */
+.fade{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.fade.up{opacity:1;transform:translateY(0)}
+.fade-l{opacity:0;transform:translateX(-32px);transition:opacity .65s ease,transform .65s ease}
+.fade-l.up{opacity:1;transform:translateX(0)}
+.fade-r{opacity:0;transform:translateX(32px);transition:opacity .65s ease,transform .65s ease}
+.fade-r.up{opacity:1;transform:translateX(0)}
+/* staggered children */
+.stagger>.fade:nth-child(1){transition-delay:.05s}
+.stagger>.fade:nth-child(2){transition-delay:.15s}
+.stagger>.fade:nth-child(3){transition-delay:.25s}
+.stagger>.fade:nth-child(4){transition-delay:.35s}
+.stagger>.fade:nth-child(5){transition-delay:.45s}
+.stagger>.fade:nth-child(6){transition-delay:.55s}
+
+/* ============================================================
+   HERO
+============================================================ */
+.hero{
+  position:relative;min-height:88vh;
+  display:flex;align-items:center;
+  overflow:hidden;background:#071e10;
+}
+.hero-img{
+  position:absolute;inset:0;
+}
+.hero-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(105deg,rgba(7,30,16,.9) 0%,rgba(7,30,16,.6) 55%,rgba(7,30,16,.2) 100%);
+}
+.hero-content{position:relative;z-index:2;max-width:640px;padding:80px 0 80px}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(196,154,26,.16);border:1px solid rgba(196,154,26,.36);
+  color:var(--gold2);padding:7px 18px;border-radius:40px;
+  font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  margin-bottom:26px;
+  animation:heroFade .8s .1s both;
+}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.4rem,6vw,4rem);
+  color:#fff;line-height:1.12;margin-bottom:20px;
+  animation:heroFade .8s .25s both;
+}
+.hero h1 em{color:var(--gold2);font-style:normal}
+.hero-sub{
+  font-size:1.05rem;color:rgba(255,255,255,.78);
+  line-height:1.78;margin-bottom:36px;max-width:520px;
+  animation:heroFade .8s .4s both;
+}
+.hero-btns{
+  display:flex;gap:14px;flex-wrap:wrap;
+  animation:heroFade .8s .55s both;
+}
+@keyframes heroFade{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* stats strip — sits BELOW the hero, not inside it */
+.hero-stats{
+  background:var(--g1);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  animation:heroFade .8s .75s both;
+}
+.hero-stats-inner{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  max-width:1120px;margin:0 auto;padding:0 24px;
+}
+.hstat{
+  padding:22px 16px;text-align:center;
+  border-right:1px solid rgba(255,255,255,.09);
+}
+.hstat:last-child{border-right:none}
+.hstat-n{
+  font-family:'Playfair Display',serif;
+  font-size:2rem;font-weight:700;color:var(--gold2);line-height:1;
+}
+.hstat-l{font-size:.72rem;color:rgba(255,255,255,.62);margin-top:4px;letter-spacing:.03em}
+
+/* ============================================================
+   SECTION: TWO-COL
+============================================================ */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.two-col.rev{direction:rtl}.two-col.rev>*{direction:ltr}
+.img-box{border-radius:16px;overflow:hidden;position:relative}
+.img-box img{
+  width:100%;aspect-ratio:4/3;object-fit:cover;
+  transition:transform .5s ease;
+}
+.img-box:hover img{transform:scale(1.04)}
+.img-badge{
+  position:absolute;bottom:16px;left:16px;
+  background:var(--gold);color:#fff;
+  padding:8px 18px;border-radius:8px;font-size:.8rem;font-weight:700;
+  box-shadow:0 4px 14px rgba(0,0,0,.2);
+}
+.check-list{list-style:none;margin:18px 0 28px}
+.check-list li{
+  display:flex;align-items:flex-start;gap:11px;
+  padding:8px 0;font-size:.92rem;color:#444;
+  border-bottom:1px solid var(--border);
+}
+.check-list li:last-child{border-bottom:none}
+.check-list li::before{
+  content:'✓';width:22px;height:22px;flex-shrink:0;
+  background:rgba(26,92,58,.12);color:var(--g2);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:.68rem;font-weight:800;margin-top:1px;
+}
+
+/* ============================================================
+   SECTION: PROGRAMME CARDS
+============================================================ */
+.prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.prog-card{
+  background:#fff;border:1.5px solid var(--border);
+  border-radius:16px;padding:32px 24px;
+  transition:transform .28s,box-shadow .28s,border-color .28s;
+  position:relative;overflow:hidden;
+}
+.prog-card::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--g2),var(--gold));
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .3s ease;
+}
+.prog-card:hover{transform:translateY(-7px);box-shadow:var(--shd);border-color:rgba(196,154,26,.3)}
+.prog-card:hover::after{transform:scaleX(1)}
+.prog-icon{font-size:2.2rem;margin-bottom:16px}
+.prog-card h3{font-family:'Playfair Display',serif;font-size:1.1rem;color:#111;margin-bottom:9px}
+.prog-card p{font-size:.87rem;color:var(--muted);line-height:1.68}
+
+/* ============================================================
+   SECTION: ORPHAN (dark green with real bg)
+============================================================ */
+.orphan-sec{
+  position:relative;overflow:hidden;
+  /* ── REPLACE: swap for your own orphan section image ── */
+  background-image:url('ORPHAN_BG_IMAGE_URL_HERE');
+  background-size:cover;background-position:center;
+  background-color:var(--g1);
+}
+.orphan-sec::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(7,30,16,.92) 0%,rgba(7,30,16,.72) 100%);
+  z-index:0;
+}
+.orphan-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.orphan-imgs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.oi-main{grid-column:1/-1;border-radius:14px;overflow:hidden;height:210px}
+.oi-main img{width:100%;height:100%;object-fit:cover}
+.oi-sm{border-radius:10px;overflow:hidden;height:130px}
+.oi-sm img{width:100%;height:100%;object-fit:cover}
+/* ── REPLACE: swap these three src values ── */
+/* main: ORPHAN_MAIN_IMAGE_URL_HERE  */
+/* left small: ORPHAN_SM1_IMAGE_URL_HERE  */
+/* right small: ORPHAN_SM2_IMAGE_URL_HERE  */
+.orphan-text .tag{background:rgba(196,154,26,.18);border-color:rgba(196,154,26,.32);color:var(--gold2)}
+.orphan-text h2{color:#fff;margin-bottom:14px}
+.orphan-text p{color:rgba(255,255,255,.76);font-size:.96rem;line-height:1.78;margin-bottom:8px}
+.hadith{
+  background:rgba(255,255,255,.07);border-left:3px solid var(--gold);
+  border-radius:0 10px 10px 0;padding:14px 18px;margin:18px 0 28px;
+}
+.hadith p{font-size:.88rem;color:rgba(255,255,255,.82);font-style:italic;line-height:1.7}
+
+/* ============================================================
+   SECTION: CTA BANNER
+============================================================ */
+.cta-sec{
+  position:relative;overflow:hidden;text-align:center;
+  /* ── REPLACE: swap for your own CTA banner image ── */
+  background-image:url('CTA_BG_IMAGE_URL_HERE');
+  background-size:cover;background-position:center;
+  background-color:#071e10;
+  padding:96px 0;
+}
+.cta-sec::before{
+  content:'';position:absolute;inset:0;
+  background:rgba(7,30,16,.82);z-index:0;
+}
+.cta-inner{position:relative;z-index:1}
+.cta-sec h2{color:#fff;margin-bottom:14px}
+.cta-sec p.sub{color:rgba(255,255,255,.76);margin:0 auto 34px}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* ============================================================
+   PAGE HERO (About / Donate / Contact)
+============================================================ */
+.pg-hero{
+  position:relative;min-height:380px;display:flex;align-items:flex-end;
+  overflow:hidden;background:#071e10;
+}
+.pg-hero-img{
+  position:absolute;inset:0;
+}
+.pg-hero-img img{width:100%;height:100%;object-fit:cover;object-position:center 35%}
+.pg-hero-img::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(7,30,16,.96) 5%,rgba(7,30,16,.5) 60%,rgba(7,30,16,.15) 100%);
+}
+.pg-hero-content{position:relative;z-index:1;padding:52px 0 56px}
+.pg-hero-content h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);color:#fff;margin-bottom:12px}
+.pg-hero-content p{color:rgba(255,255,255,.7);font-size:.97rem;max-width:560px}
+
+/* ============================================================
+   MISSION / VISION CARDS
+============================================================ */
+.mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:64px}
+.mv-card{
+  background:#fff;border:1.5px solid var(--border);border-radius:14px;
+  padding:34px 30px;border-top:4px solid var(--g2);
+  transition:box-shadow .25s,transform .25s;
+}
+.mv-card:hover{box-shadow:var(--sh);transform:translateY(-3px)}
+.mv-card.gold{border-top-color:var(--gold)}
+.mv-card h3{font-family:'Playfair Display',serif;font-size:1.12rem;color:var(--g2);margin-bottom:12px}
+.mv-card.gold h3{color:var(--gold)}
+.mv-card p{font-size:.92rem;color:var(--muted);line-height:1.78}
+
+/* ============================================================
+   VALUES GRID
+============================================================ */
+.vals-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.val-card{
+  background:#fff;border:1.5px solid var(--border);border-radius:14px;
+  padding:26px 20px;text-align:center;
+  transition:all .25s;
+}
+.val-card:hover{border-color:var(--gold);box-shadow:var(--sh);transform:translateY(-4px)}
+.val-icon{font-size:2rem;margin-bottom:12px}
+.val-card h4{font-family:'Playfair Display',serif;font-size:.95rem;color:#111;margin-bottom:6px}
+.val-card p{font-size:.8rem;color:var(--muted);line-height:1.6}
+
+/* ============================================================
+   IMPACT STRIP
+============================================================ */
+.impact-strip{
+  background:linear-gradient(135deg,var(--g1),var(--g2));
+  border-radius:18px;padding:48px 40px;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center;
+}
+.istat-n{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:700;color:var(--gold2)}
+.istat-l{font-size:.8rem;color:rgba(255,255,255,.66);margin-top:5px}
+
+/* ============================================================
+   DONATE – PAYMENT CARDS
+============================================================ */
+.pay-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.pay-card{
+  background:#fff;border:2px solid var(--border);border-radius:16px;
+  padding:30px 24px;text-align:center;
+  transition:all .28s;
+}
+.pay-card:hover{border-color:var(--gold);box-shadow:var(--shd);transform:translateY(-5px)}
+.pay-logo{
+  width:64px;height:64px;border-radius:50%;margin:0 auto 16px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.6rem;font-weight:900;color:#fff;
+}
+.mtn{background:linear-gradient(135deg,#ffcb00,#f59e0b);color:#333!important}
+.airtel{background:linear-gradient(135deg,#e31837,#9b0000)}
+.bankl{background:linear-gradient(135deg,var(--g2),var(--g3))}
+.pay-card h3{font-size:1rem;font-weight:700;margin-bottom:4px}
+.pay-type{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;margin-bottom:20px}
+.pay-row{
+  background:var(--cream);border-radius:8px;padding:10px 14px;
+  margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;text-align:left;
+}
+.prl{font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;display:block;margin-bottom:2px}
+.prv{font-size:.9rem;font-weight:600;color:#111}
+.cbtn{
+  background:var(--gold);color:#fff;border:none;
+  border-radius:6px;padding:5px 11px;font-size:.7rem;font-weight:700;
+  cursor:pointer;transition:background .18s;flex-shrink:0;
+}
+.cbtn:hover{background:#a8800f}.cbtn.ok{background:var(--g2)}
+
+/* confirm box */
+.confirm-box{
+  background:var(--cream);border-radius:18px;
+  padding:48px 32px;text-align:center;margin-top:52px;
+  border:1.5px solid var(--border);
+}
+.confirm-box h3{font-family:'Playfair Display',serif;font-size:1.4rem;color:#111;margin-bottom:10px}
+.confirm-box p{font-size:.92rem;color:var(--muted);max-width:440px;margin:0 auto 26px}
+.wa-cta{
+  display:inline-flex;align-items:center;gap:11px;
+  background:#25d366;color:#fff;padding:15px 32px;
+  border-radius:12px;font-weight:700;font-size:.96rem;
+  transition:all .22s;box-shadow:0 6px 20px rgba(37,211,102,.3);
+}
+.wa-cta:hover{background:#1ebe5d;transform:translateY(-2px);box-shadow:0 10px 28px rgba(37,211,102,.4)}
+.wa-cta svg{width:22px;height:22px;fill:#fff;flex-shrink:0}
+
+/* transparency */
+.funds-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.use-list{list-style:none}
+.use-item{
+  display:flex;align-items:center;gap:16px;
+  padding:14px 0;border-bottom:1px solid var(--border);
+}
+.use-item:last-child{border-bottom:none}
+.use-amt{
+  background:var(--gold);color:#fff;font-weight:700;
+  font-size:.82rem;padding:6px 12px;border-radius:7px;
+  min-width:56px;text-align:center;flex-shrink:0;
+}
+.use-item p{font-size:.9rem;color:#444}
+
+.tr-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.tr-item{
+  display:flex;align-items:flex-start;gap:12px;
+  background:#fff;border:1.5px solid var(--border);
+  border-radius:12px;padding:18px;
+  transition:border-color .2s;
+}
+.tr-item:hover{border-color:var(--g3)}
+.tr-tick{
+  width:28px;height:28px;flex-shrink:0;
+  background:rgba(26,92,58,.1);color:var(--g2);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:.72rem;font-weight:800;
+}
+.tr-item h4{font-size:.87rem;font-weight:700;color:#111;margin-bottom:3px}
+.tr-item p{font-size:.79rem;color:var(--muted);line-height:1.55}
+
+.pbar-track{background:var(--cream);border-radius:40px;height:13px;overflow:hidden;margin:8px 0}
+.pbar-fill{height:100%;width:0;background:linear-gradient(90deg,var(--g2),var(--gold));border-radius:40px;transition:width 1.5s ease}
+
+/* ============================================================
+   CONTACT
+============================================================ */
+.contact-grid{display:grid;grid-template-columns:1fr 1.65fr;gap:44px;align-items:start}
+.info-card{
+  background:#fff;border:1.5px solid var(--border);
+  border-radius:14px;padding:32px 26px;
+}
+.info-card h3{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--g2);margin-bottom:20px;padding-bottom:14px;border-bottom:2px solid var(--cream)}
+.info-row{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--cream)}
+.info-row:last-of-type{border-bottom:none}
+.info-icon{width:38px;height:38px;flex-shrink:0;background:var(--cream);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1rem}
+.info-lbl{font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
+.info-val{font-size:.9rem;font-weight:500;color:#111}
+.info-val a{color:var(--g2)}
+.map-box{border-radius:12px;overflow:hidden;height:220px;border:1.5px solid var(--border);margin-top:18px}
+.map-box iframe{display:block;width:100%;height:100%;border:0}
+
+.form-card{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:38px 32px}
+.form-card h3{font-family:'Playfair Display',serif;font-size:1.2rem;color:#111;margin-bottom:26px}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fg{margin-bottom:16px}
+.fg label{display:block;font-size:.8rem;font-weight:700;color:#444;margin-bottom:6px}
+.fg input,.fg select,.fg textarea{
+  width:100%;background:var(--cream);
+  border:2px solid transparent;border-radius:9px;
+  padding:12px 15px;font-size:.91rem;font-family:'Inter',sans-serif;color:#111;
+  outline:none;transition:border-color .2s,background .2s;
+}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--g2);background:#fff}
+.fg textarea{resize:vertical;min-height:110px}
+.btn-submit{width:100%;justify-content:center;padding:14px;font-size:.97rem}
+
+.vol-banner{
+  background:linear-gradient(135deg,var(--g1),var(--g2));
+  border-radius:18px;padding:48px 36px;text-align:center;margin-top:44px;
+}
+.vol-banner h3{font-family:'Playfair Display',serif;font-size:1.7rem;color:#fff;margin-bottom:10px}
+.vol-banner p{color:rgba(255,255,255,.76);font-size:.94rem;margin-bottom:24px;max-width:440px;margin-left:auto;margin-right:auto}
+
+/* ============================================================
+   FOOTER
+============================================================ */
+footer{background:#060f08;padding:60px 0 0}
+.footer-grid{
+  display:grid;grid-template-columns:2.2fr 1fr 1fr;gap:48px;
+  padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.07);
+}
+.f-logo{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.f-gem{width:34px;height:34px;background:var(--gold);border-radius:7px;overflow:hidden;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#fff}
+.f-gem img{width:100%;height:100%;object-fit:contain;display:block}
+.f-gem img[src="logo.png"]{display:none}
+.f-gem img[src="logo.png"] + .f-mono{display:flex}
+.f-mono{display:none;width:100%;height:100%;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff}
+.f-logo span{color:#fff;font-weight:700;font-size:.92rem}
+.f-brand p{font-size:.84rem;color:rgba(255,255,255,.52);line-height:1.75;max-width:280px;margin-bottom:18px}
+.tiktok-link{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.07);color:rgba(255,255,255,.7);
+  padding:8px 16px;border-radius:8px;font-size:.8rem;font-weight:500;
+  transition:background .2s;
+}
+.tiktok-link:hover{background:rgba(255,255,255,.13);color:#fff}
+.f-col h4{color:#fff;font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px}
+.f-col ul{list-style:none}
+.f-col ul li{margin-bottom:9px}
+.f-col ul li a{color:rgba(255,255,255,.52);font-size:.84rem;cursor:pointer;transition:color .18s}
+.f-col ul li a:hover{color:var(--gold2)}
+.f-col p{font-size:.84rem;color:rgba(255,255,255,.52);line-height:1.75;margin-bottom:7px}
+.f-col a.flink{color:var(--gold2)}
+.footer-bar{
+  padding:18px 0;display:flex;justify-content:space-between;
+  align-items:center;font-size:.74rem;color:rgba(255,255,255,.3);flex-wrap:wrap;gap:6px;
+}
+.footer-bar b{color:var(--gold2);font-weight:500}
+
+/* ============================================================
+   FLOATING WHATSAPP
+============================================================ */
+#wa-fab{position:fixed;bottom:26px;right:24px;z-index:900}
+.wa-pill{
+  display:flex;align-items:center;gap:10px;
+  background:#25d366;color:#fff;
+  padding:14px 20px 14px 16px;border-radius:50px;
+  font-size:.86rem;font-weight:700;
+  box-shadow:0 6px 24px rgba(37,211,102,.45);
+  transition:all .25s;
+  animation:waPulse 3s infinite;
+  text-decoration:none;
+}
+.wa-pill:hover{background:#1ebe5d;transform:translateY(-2px);box-shadow:0 10px 32px rgba(37,211,102,.55)}
+.wa-pill svg{width:22px;height:22px;fill:#fff;flex-shrink:0}
+@keyframes waPulse{
+  0%,100%{box-shadow:0 6px 24px rgba(37,211,102,.45)}
+  50%{box-shadow:0 6px 36px rgba(37,211,102,.7)}
+}
+
+/* ============================================================
+   DIVIDER
+============================================================ */
+hr.div{border:none;border-top:1px solid var(--border);margin:0}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media(max-width:900px){
+  .two-col,.orphan-inner,.contact-grid,.funds-grid{grid-template-columns:1fr}
+  .two-col.rev{direction:ltr}
+  .prog-grid{grid-template-columns:1fr 1fr}
+  .vals-grid{grid-template-columns:1fr 1fr}
+  .impact-strip{grid-template-columns:1fr 1fr}
+  .mv-grid{grid-template-columns:1fr}
+  .pay-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto}
+  .tr-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .hero-stats-inner{grid-template-columns:1fr 1fr}
+  .hstat{border-right:none!important;border-bottom:1px solid rgba(255,255,255,.09)!important}
+  .hstat:nth-child(odd){border-right:1px solid rgba(255,255,255,.09)!important}
+  .hstat:nth-last-child(-n+2){border-bottom:none!important}
+  .orphan-imgs{grid-template-columns:1fr}
+  .oi-main{grid-column:auto}
+}
+@media(max-width:600px){
+  .nav-links{display:none}
+  .burger{display:flex}
+  .sec{padding:60px 0}
+  .prog-grid,.vals-grid{grid-template-columns:1fr}
+  .impact-strip{grid-template-columns:1fr 1fr;padding:32px 20px}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bar{flex-direction:column;text-align:center}
+  .hero h1{font-size:2.2rem}
+  .hero-btns{flex-direction:column}
+  .hero-btns .btn{justify-content:center}
+  .cta-btns{flex-direction:column;align-items:center}
+  .pg-hero{min-height:300px}
+  .pg-hero-content h1{font-size:2rem}
+  .f2{grid-template-columns:1fr}
+  .wa-pill span{display:none}
+  .wa-pill{padding:14px}
+  .wa-pill svg{width:26px;height:26px}
+}
+</style>
+</head>
+<body>
+
+<!-- ██████████████ NAVBAR ██████████████ -->
+<nav id="nav">
+  <div class="wrap">
+    <div class="nav-inner">
+      <div class="logo" onclick="go('home')">
+        <div class="logo-gem">
+          <!--
+            REPLACE src with your logo image URL, e.g.:
+            src="logo.png"
+            or if hosting on GitHub: src="logo.png"
+          -->
+          <img id="nav-logo-img" src="logo.png" alt="KICYYSO"/>
+          <span class="logo-mono">K</span>
+        </div>
+        <div class="logo-text">
+          <strong>KICYYSO</strong>
+          <small>Kalege Islamic Children &amp; Youth Support</small>
+        </div>
+      </div>
+      <ul class="nav-links">
+        <li><a id="nl-home" class="on" onclick="go('home')">Home</a></li>
+        <li><a id="nl-about" onclick="go('about')">About</a></li>
+        <li><a id="nl-donate" onclick="go('donate')">Donate</a></li>
+        <li><a id="nl-contact" onclick="go('contact')">Contact</a></li>
+        <li><a class="cta" onclick="go('donate')">❤️ Donate Now</a></li>
+      </ul>
+      <button class="burger" id="burger" onclick="toggleMob()" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mob" id="mob">
+    <a onclick="go('home');closeMob()">Home</a>
+    <a onclick="go('about');closeMob()">About Us</a>
+    <a onclick="go('donate');closeMob()">Donate</a>
+    <a onclick="go('contact');closeMob()">Contact</a>
+    <a class="mcta" onclick="go('donate');closeMob()">❤️ Donate Now</a>
+  </div>
+</nav>
+
+
+<!-- ████████████████████████████████████████
+     HOME PAGE
+████████████████████████████████████████ -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-img">
+      <!--
+        REPLACE: Put your hero image URL inside src below.
+        Recommended: photo of smiling children in Uganda, 1600px wide
+        Example: src="https://your-image-host.com/hero.jpg"
+      -->
+      <img
+        src="https://tonyalatorre.wordpress.com/files/2009/11/dsc_8346.jpg"
+        alt="Children supported by KICYYSO in Uganda"
+        loading="eager" fetchpriority="high"
+      />
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="wrap">
+      <div class="hero-content">
+        <div class="hero-badge">🕌 Registered NGO · Nansana, Uganda</div>
+        <h1>Transforming Lives Through<br><em>Compassion</em> &amp; Hope</h1>
+        <p class="hero-sub">KICYYSO supports orphans, disadvantaged children, and vulnerable communities in Uganda through education, healthcare, and Islamic values.</p>
+        <div class="hero-btns">
+          <a class="btn btn-gold" onclick="go('donate')" style="cursor:pointer">❤️ Donate Now</a>
+          <a class="btn btn-ghost" onclick="go('about')" style="cursor:pointer">Learn More →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR — below hero, fully visible -->
+  <div class="hero-stats">
+    <div class="hero-stats-inner">
+      <div class="hstat"><div class="hstat-n">500+</div><div class="hstat-l">Children Supported</div></div>
+      <div class="hstat"><div class="hstat-n">100+</div><div class="hstat-l">Families Assisted</div></div>
+      <div class="hstat"><div class="hstat-n">50+</div><div class="hstat-l">Volunteers</div></div>
+      <div class="hstat"><div class="hstat-n">10+</div><div class="hstat-l">Community Projects</div></div>
+    </div>
+  </div>
+
+  <!-- ABOUT PREVIEW -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="two-col">
+        <div class="img-box fade-l">
+          <!--
+            REPLACE: Community / children photo
+            Recommended: volunteers with children, warm tone
+          -->
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi5MdKhjGXAlWkZ6_FENd9i5cLU8yHFXAYqMHsHrtKqI1n2mgF_MnPtwNB&s=10"
+            alt="KICYYSO community work in Nansana Uganda"
+            loading="lazy"
+          />
+          <div class="img-badge">📍 Nansana, Wakiso, Uganda</div>
+        </div>
+        <div class="fade-r">
+          <span class="tag">Who We Are</span>
+          <h2 class="title">Serving Uganda's Most Vulnerable</h2>
+          <p class="sub">KICYYSO is a registered NGO in Nansana, Wakiso District. We uplift orphaned children, disadvantaged youth, and vulnerable families through practical support rooted in Islamic values.</p>
+          <ul class="check-list">
+            <li>Orphan sponsorship and daily welfare support</li>
+            <li>Education — school fees, books &amp; uniforms</li>
+            <li>Healthcare and food assistance for families</li>
+            <li>Islamic education and youth empowerment</li>
+          </ul>
+          <a class="btn btn-green" onclick="go('about')" style="cursor:pointer">Read Our Story →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="div"/>
+
+  <!-- PROGRAMMES -->
+  <section class="sec" style="background:var(--cream)">
+    <div class="wrap">
+      <div class="tc fade" style="margin-bottom:48px">
+        <span class="tag">Our Programmes</span>
+        <h2 class="title">How We Help</h2>
+        <p class="sub">Six core programmes creating lasting change for children and families across Uganda.</p>
+      </div>
+      <div class="prog-grid stagger">
+        <div class="prog-card fade">
+          <div class="prog-icon">🤲</div>
+          <h3>Orphan Support</h3>
+          <p>Comprehensive care for orphaned children — food, shelter, clothing, and the warmth of community.</p>
+        </div>
+        <div class="prog-card fade">
+          <div class="prog-icon">📚</div>
+          <h3>Education</h3>
+          <p>School fees, books, uniforms, and supplies so every child can access quality education.</p>
+        </div>
+        <div class="prog-card fade">
+          <div class="prog-icon">🏥</div>
+          <h3>Healthcare</h3>
+          <p>Medical check-ups, treatment, and essential medicine for vulnerable children and mothers.</p>
+        </div>
+        <div class="prog-card fade">
+          <div class="prog-icon">🕌</div>
+          <h3>Islamic Education</h3>
+          <p>Qur'an classes, Islamic studies, and spiritual mentorship for children and youth.</p>
+        </div>
+        <div class="prog-card fade">
+          <div class="prog-icon">🎓</div>
+          <h3>Youth Empowerment</h3>
+          <p>Vocational training and skills development giving young people a sustainable future.</p>
+        </div>
+        <div class="prog-card fade">
+          <div class="prog-icon">🍲</div>
+          <h3>Food &amp; Welfare</h3>
+          <p>Food packages and essential welfare supplies for Uganda's most vulnerable households.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORPHAN SECTION -->
+  <section class="sec orphan-sec">
+    <div class="wrap">
+      <div class="orphan-inner">
+        <div class="orphan-imgs fade-l">
+          <!--
+            REPLACE the three image src values below:
+            1. ORPHAN_MAIN_IMAGE   – wide photo of orphaned/supported children
+            2. ORPHAN_SMALL_LEFT   – close-up child studying / learning
+            3. ORPHAN_SMALL_RIGHT  – children eating / food distribution
+          -->
+          <div class="oi-main">
+            <img src="https://www.orphans-of-uganda.org/wp-content/uploads/2021/09/signal-2021-09-01-184613.jpg" alt="Orphaned children receiving support in Uganda" loading="lazy"/>
+          </div>
+          <div class="oi-sm">
+            <img src="https://lifesong.org/site/wp-content/uploads/2017/08/Lq9-_UjQ.jpeg" alt="Child studying with KICYYSO support" loading="lazy"/>
+          </div>
+          <div class="oi-sm">
+            <img src="https://support-uganda.org/wp-content/uploads/2020/02/DSC07779-scaled-960x750.jpg" alt="Children receiving food assistance" loading="lazy"/>
+          </div>
+        </div>
+        <div class="orphan-text fade-r">
+          <span class="tag">Orphan Support</span>
+          <h2 class="title title-w">No Orphan Should Face Life Alone</h2>
+          <p>Thousands of children in Uganda have lost one or both parents to illness, poverty, and hardship. KICYYSO ensures no orphan faces their journey without food, education, and community.</p>
+          <div class="hadith">
+            <p>"I and the one who cares for an orphan will be in Paradise together like this." — <strong style="color:var(--gold2)">Prophet Muhammad ﷺ</strong></p>
+          </div>
+          <a class="btn btn-gold" onclick="go('donate')" style="cursor:pointer">❤️ Sponsor an Orphan</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-sec">
+    <!--
+      REPLACE: Put a strong community/children photo behind this CTA
+    -->
+    <div class="cta-inner wrap">
+      <span class="tag tag-light">Make a Difference</span>
+      <h2 class="title title-w">Every Donation Changes a Life</h2>
+      <p class="sub sub-w">Join hundreds of donors giving hope to Uganda's most vulnerable children. Your generosity matters.</p>
+      <div class="cta-btns">
+        <a class="btn btn-gold" onclick="go('donate')" style="cursor:pointer">❤️ Donate Now</a>
+        <a class="btn btn-ghost" onclick="go('contact')" style="cursor:pointer">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /home -->
+
+
+<!-- ████████████████████████████████████████
+     ABOUT PAGE
+████████████████████████████████████████ -->
+<div id="page-about" class="page">
+
+  <section class="pg-hero">
+    <div class="pg-hero-img">
+      <!--
+        REPLACE: Inspiring wide shot — volunteers, children, community gathering
+      -->
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi5MdKhjGXAlWkZ6_FENd9i5cLU8yHFXAYqMHsHrtKqI1n2mgF_MnPtwNB&s=10" alt="KICYYSO community Uganda" loading="lazy"/>
+    </div>
+    <div class="wrap">
+      <div class="pg-hero-content">
+        <span class="tag" style="background:rgba(196,154,26,.18);border-color:rgba(196,154,26,.32);color:var(--gold2)">About Us</span>
+        <h1>About KICYYSO</h1>
+        <p>Kalege Islamic Children &amp; Youth Support Organization — empowering orphans and vulnerable communities in  Uganda.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="two-col">
+        <div class="img-box fade-l">
+          <!--
+            REPLACE: Photo of founders / team / early activities
+          -->
+          <img src="https://alwaasicharity.com/wp-content/uploads/photo-gallery/imported_from_media_libray/UCS_0145-comp.jpg?bwg=1766202499" alt="KICYYSO founders and volunteers Uganda" loading="lazy"/>
+          <div class="img-badge">🤲 Serving Our Community</div>
+        </div>
+        <div class="fade-r">
+          <span class="tag">Our Story</span>
+          <h2 class="title">A Calling Born from Compassion</h2>
+          <p class="sub" style="margin-bottom:16px">KICYYSO was founded in response to the growing number of orphaned and economically disadvantaged children in Uganda. A group of community members came together under Islamic principles of mercy and solidarity to ensure no child is left behind.</p>
+          <p style="font-size:.92rem;color:var(--muted);line-height:1.78">From humble beginnings — distributing food and paying a handful of school fees — we have grown into a registered NGO touching hundreds of lives annually. By the grace of Allah, we are only getting started.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="div"/>
+
+  <!-- MISSION / VISION / VALUES -->
+  <section class="sec" style="background:var(--cream)">
+    <div class="wrap">
+      <div class="tc fade" style="margin-bottom:40px">
+        <span class="tag">Our Purpose</span>
+        <h2 class="title">Mission, Vision &amp; Values</h2>
+      </div>
+      <div class="mv-grid">
+        <div class="mv-card fade">
+          <h3>🎯 Our Mission</h3>
+          <p>To uplift vulnerable children, youth, and communities through education, welfare support, Islamic values, and sustainable development — ensuring every child has a fair chance at a dignified life.</p>
+        </div>
+        <div class="mv-card gold fade">
+          <h3>🌅 Our Vision</h3>
+          <p>A Uganda where every child has access to opportunities, dignity, and hope — where no child goes to bed hungry, uneducated, or unloved.</p>
+        </div>
+      </div>
+      <div class="tc fade" style="margin-bottom:28px">
+        <span class="tag">Core Values</span>
+        <h2 class="title">What Guides Us</h2>
+      </div>
+      <div class="vals-grid stagger">
+        <div class="val-card fade"><div class="val-icon">💚</div><h4>Compassion</h4><p>Every person we serve deserves empathy, dignity, and kindness.</p></div>
+        <div class="val-card fade"><div class="val-icon">⚖️</div><h4>Integrity</h4><p>Honest and principled in every decision, always.</p></div>
+        <div class="val-card fade"><div class="val-icon">📊</div><h4>Accountability</h4><p>Every donation tracked. Donors always know where funds go.</p></div>
+        <div class="val-card fade"><div class="val-icon">🤝</div><h4>Community</h4><p>Communities thrive when they stand together and uplift one another.</p></div>
+        <div class="val-card fade"><div class="val-icon">🌟</div><h4>Excellence</h4><p>We continuously raise our standards to serve better every day.</p></div>
+        <div class="val-card fade"><div class="val-icon">🕌</div><h4>Islamic Values</h4><p>The Qur'an and Sunnah guide every decision we make.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACT -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="tc fade" style="margin-bottom:36px">
+        <span class="tag">Our Impact</span>
+        <h2 class="title">Lives Transformed</h2>
+      </div>
+      <div class="impact-strip fade" style="margin-bottom:44px">
+        <div><div class="istat-n">500+</div><div class="istat-l">Children Supported</div></div>
+        <div><div class="istat-n">100+</div><div class="istat-l">Families Assisted</div></div>
+        <div><div class="istat-n">50+</div><div class="istat-l">Volunteers</div></div>
+        <div><div class="istat-n">10+</div><div class="istat-l">Projects Completed</div></div>
+      </div>
+      <div class="tc">
+        <a class="btn btn-gold" onclick="go('donate')" style="cursor:pointer">❤️ Help Us Reach More Children</a>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /about -->
+
+
+<!-- ████████████████████████████████████████
+     DONATE PAGE
+████████████████████████████████████████ -->
+<div id="page-donate" class="page">
+
+  <section class="pg-hero">
+    <div class="pg-hero-img">
+      <!--
+        REPLACE: Emotional children / donation impact photo
+      -->
+      <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=1400&q=85&auto=format&fit=crop" alt="Donate to support children Uganda" loading="lazy"/>
+    </div>
+    <div class="wrap">
+      <div class="pg-hero-content">
+        <span class="tag" style="background:rgba(196,154,26,.18);border-color:rgba(196,154,26,.32);color:var(--gold2)">Support Our Work</span>
+        <h1>Be the Reason Someone Smiles Today</h1>
+        <p>Your generosity provides food, education, healthcare, and hope to Uganda's most vulnerable children.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO DONATE -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="tc fade" style="margin-bottom:48px">
+        <span class="tag">How to Donate</span>
+        <h2 class="title">Choose a Payment Method</h2>
+        <p class="sub">No online gateway. Use any method below, then send us your payment confirmation via WhatsApp.</p>
+      </div>
+      <div class="pay-grid stagger">
+
+        <!-- MTN — Coming Soon -->
+        <div class="pay-card fade" style="opacity:.75;position:relative;overflow:hidden">
+          <div style="position:absolute;top:14px;right:14px;background:var(--gold);color:#fff;font-size:.65rem;font-weight:700;padding:3px 10px;border-radius:40px;letter-spacing:.08em;text-transform:uppercase">Coming Soon</div>
+          <div class="pay-logo mtn" style="opacity:.55">M</div>
+          <h3 style="color:var(--muted)">MTN Mobile Money</h3>
+          <div class="pay-type">MoMo · Uganda</div>
+          <div class="pay-row" style="background:#f0ede6">
+            <div><span class="prl">Status</span><span class="prv" style="color:var(--gold)">🔜 Coming Soon</span></div>
+          </div>
+          <p style="font-size:.78rem;color:var(--muted);margin-top:14px;text-align:center">MTN MoMo donations will be available shortly. Please use Bank Transfer for now.</p>
+        </div>
+
+        <!-- AIRTEL — Coming Soon -->
+        <div class="pay-card fade" style="opacity:.75;position:relative;overflow:hidden">
+          <div style="position:absolute;top:14px;right:14px;background:var(--gold);color:#fff;font-size:.65rem;font-weight:700;padding:3px 10px;border-radius:40px;letter-spacing:.08em;text-transform:uppercase">Coming Soon</div>
+          <div class="pay-logo airtel" style="opacity:.55">A</div>
+          <h3 style="color:var(--muted)">Airtel Money</h3>
+          <div class="pay-type">Airtel · Uganda</div>
+          <div class="pay-row" style="background:#f0ede6">
+            <div><span class="prl">Status</span><span class="prv" style="color:var(--gold)">🔜 Coming Soon</span></div>
+          </div>
+          <p style="font-size:.78rem;color:var(--muted);margin-top:14px;text-align:center">Airtel Money donations will be available shortly. Please use Bank Transfer for now.</p>
+        </div>
+
+        <!-- BANK — Tropical Bank -->
+        <div class="pay-card fade">
+          <div class="pay-logo bankl">🏦</div>
+          <h3>Bank Transfer</h3>
+          <div class="pay-type">Tropical Bank · Uganda</div>
+          <div class="pay-row"><div><span class="prl">Bank Name</span><span class="prv">Tropical Bank Uganda</span></div></div>
+          <div class="pay-row"><div><span class="prl">Account Name</span><span class="prv">Kalege Islamic Children & Youth Support Organization</span></div></div>
+          <div class="pay-row">
+            <div><span class="prl">Account Number</span><span class="prv" id="bankno">2001902663</span></div>
+            <button class="cbtn" onclick="cp('bankno',this)">Copy</button>
+          </div>
+          <div class="pay-row"><div><span class="prl">Branch</span><span class="prv">Nansana, Wakiso</span></div></div>
+        </div>
+      </div>
+
+      <!-- CONFIRM BOX -->
+      <div class="confirm-box fade">
+        <div style="font-size:3rem;margin-bottom:14px">✅</div>
+        <h3>After Donating — Send Us Proof of Payment</h3>
+        <p>Screenshot your payment confirmation and send it on WhatsApp. We will acknowledge it and keep accurate records of your generous donation.</p>
+        <a href="https://wa.me/256702528923?text=Assalamu%20Alaikum.%20I%20have%20made%20a%20donation%20to%20KICYYSO.%20Please%20find%20my%20proof%20of%20payment%20attached.%20Jazakallah%20khair." target="_blank" class="wa-cta">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.52 3.47A11.82 11.82 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.12.55 4.19 1.6 6.02L0 24l6.14-1.61A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.21-3.48-8.53zM12 22c-1.85 0-3.66-.5-5.23-1.44l-.37-.22-3.87 1.01 1.03-3.77-.24-.39A9.94 9.94 0 0 1 2 12C2 6.48 6.48 2 12 2c2.67 0 5.18 1.04 7.07 2.93A9.94 9.94 0 0 1 22 12c0 5.52-4.48 10-10 10zm5.5-7.5c-.3-.15-1.77-.87-2.04-.97-.28-.1-.48-.15-.68.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07A8.15 8.15 0 0 1 9.5 12.6c-.38-.66-.08-.97.22-1.27l.49-.56c.12-.14.16-.26.24-.43.08-.18.04-.33-.02-.48-.06-.15-.68-1.63-.93-2.23-.25-.6-.5-.52-.68-.53l-.58-.01c-.2 0-.52.07-.79.36-.27.3-1.03 1-1.03 2.44s1.05 2.83 1.2 3.03c.15.2 2.07 3.16 5.02 4.43.7.3 1.25.48 1.68.62.7.22 1.34.19 1.85.12.56-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35z"/></svg>
+          Send Confirmation via WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="div"/>
+
+  <!-- TRANSPARENCY -->
+  <section class="sec" style="background:var(--cream)">
+    <div class="wrap">
+      <div class="tc fade" style="margin-bottom:48px">
+        <span class="tag">Transparency</span>
+        <h2 class="title">Where Your Money Goes</h2>
+        <p class="sub">Complete clarity — here is exactly what every dollar achieves for our children.</p>
+      </div>
+      <div class="funds-grid">
+        <div class="fade-l">
+          <ul class="use-list">
+            <li class="use-item"><div class="use-amt">$10</div><p>School supplies — books, pens &amp; bag for one child per term.</p></li>
+            <li class="use-item"><div class="use-amt">$25</div><p>One month of nutritious meals for a vulnerable orphaned child.</p></li>
+            <li class="use-item"><div class="use-amt">$50</div><p>Medical check-up and basic treatment for a child in need.</p></li>
+            <li class="use-item"><div class="use-amt">$100</div><p>One full term of school fees for an orphaned child (3 months).</p></li>
+            <li class="use-item"><div class="use-amt">$200</div><p>Monthly food package for an entire vulnerable family.</p></li>
+          </ul>
+        </div>
+        <div class="fade-r">
+          <div class="tr-grid" style="margin-bottom:26px">
+            <div class="tr-item"><div class="tr-tick">✓</div><div><h4>Orphan Support</h4><p>Directly covers orphaned children's daily needs.</p></div></div>
+            <div class="tr-item"><div class="tr-tick">✓</div><div><h4>Education</h4><p>School fees, supplies, and learning materials.</p></div></div>
+            <div class="tr-item"><div class="tr-tick">✓</div><div><h4>Healthcare</h4><p>Medical care and treatment for vulnerable children.</p></div></div>
+            <div class="tr-item"><div class="tr-tick">✓</div><div><h4>Accountability</h4><p>100% transparent reporting on all donations.</p></div></div>
+          </div>
+          <!-- PROGRESS -->
+          <div style="background:#fff;border-radius:14px;padding:28px;border:1.5px solid var(--border)">
+            <h4 style="font-family:'Playfair Display',serif;font-size:1rem;color:#111;margin-bottom:16px">🎯 2026 Fundraising Goal</h4>
+            <div style="display:flex;justify-content:space-between;font-size:.84rem;margin-bottom:6px">
+              <span style="color:var(--muted)">Goal: $50,000</span>
+              <strong>Raised: $32,500</strong>
+            </div>
+            <div class="pbar-track"><div class="pbar-fill" id="pbar"></div></div>
+            <p style="font-size:.74rem;color:var(--muted);text-align:right;margin-top:4px">65% reached — help us hit 100%!</p>
+            <div style="display:flex;justify-content:space-around;text-align:center;margin-top:20px;padding-top:16px;border-top:1px solid var(--border)">
+              <div><div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--g2)">247</div><div style="font-size:.72rem;color:var(--muted)">Donors This Year</div></div>
+              <div><div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--gold)">$131</div><div style="font-size:.72rem;color:var(--muted)">Average Gift</div></div>
+              <div><div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--g2)">$17.5k</div><div style="font-size:.72rem;color:var(--muted)">Still Needed</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /donate -->
+
+
+<!-- ████████████████████████████████████████
+     CONTACT PAGE
+████████████████████████████████████████ -->
+<div id="page-contact" class="page">
+
+  <section class="pg-hero">
+    <div class="pg-hero-img">
+      <!--
+        REPLACE: Team / office / community photo for contact hero
+      -->
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQxfgtGZsyG8rMoRUDvc_NtufFKH2_UTIWruvSEotkeWkyeZ9P46h63_wF&s=10" alt="Contact KICYYSO Uganda" loading="lazy"/>
+    </div>
+    <div class="wrap">
+      <div class="pg-hero-content">
+        <span class="tag" style="background:rgba(196,154,26,.18);border-color:rgba(196,154,26,.32);color:var(--gold2)">Get in Touch</span>
+        <h1>Contact Us</h1>
+        <p>Whether you want to donate, volunteer, partner, or ask about our work — we'd love to hear from you.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div>
+          <div class="info-card fade-l">
+            <h3>Contact Information</h3>
+            <div class="info-row">
+              <div class="info-icon">📍</div>
+              <div><div class="info-lbl">Address</div><div class="info-val">Nansana, Wakiso District, Uganda</div></div>
+            </div>
+            <div class="info-row">
+              <div class="info-icon">📧</div>
+              <div><div class="info-lbl">Email</div><div class="info-val"><a href="mailto:info@kicyyso.org">info@kicyyso.org</a></div></div>
+            </div>
+            <div class="info-row">
+              <div class="info-icon">📞</div>
+              <div>
+                <div class="info-lbl">Phone / WhatsApp</div>
+                <div class="info-val">
+                  <a href="tel:+256702528923">+256 702 528923</a><br/>
+                  <a href="tel:+256789080848">+256 789 080848</a><br/>
+                  <a href="tel:+256764914223">+256 764 914223</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="map-box fade-l" style="transition-delay:.15s">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63710!2d32.5255!3d0.3676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbc958b82fbbd%3A0x41b0ef85e70a1e75!2sNansana%2C%20Uganda!5e0!3m2!1sen!2sug!4v1700000000"
+              title="KICYYSO Location – Nansana, Wakiso, Uganda"
+              allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+
+        <div class="<div class="form-card fade-r">
+  <h3>Send Us a Message</h3>
+
+  <form action="https://formspree.io/f/xnjqqgor" method="POST">
+
+    <div class="f2">
+      <div class="fg">
+        <label>Full Name *</label>
+        <input type="text" name="name" placeholder="Your name" required />
+      </div>
+
+      <div class="fg">
+        <label>Email *</label>
+        <input type="email" name="email" placeholder="your@email.com" required />
+      </div>
+    </div>
+
+    <div class="f2">
+      <div class="fg">
+        <label>Phone</label>
+        <input type="tel" name="phone" placeholder="+256 …" />
+      </div>
+
+      <div class="fg">
+        <label>Subject *</label>
+        <select name="subject" required>
+          <option value="">Select…</option>
+          <option>General Enquiry</option>
+          <option>Donation</option>
+          <option>Volunteer</option>
+          <option>Partnership</option>
+          <option>Other</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="fg">
+      <label>Message *</label>
+      <textarea name="message" placeholder="Write your message…" required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-green btn-submit">
+      Send Message →
+    </button>
+
+  </form>
+
+  <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap">
+
+    <a href="https://wa.me/256702528923?text=Assalamu%20Alaikum.%20I%20would%20like%20to%20support%20KICYYSO."
+       target="_blank"
+       style="flex:1;min-width:140px;display:flex;align-items:center;justify-content:center;gap:8px;background:#25d366;color:#fff;padding:12px;border-radius:9px;font-weight:700;font-size:.86rem;">
+      WhatsApp
+    </a>
+
+    <a href="mailto:info@kicyyso.org"
+       style="flex:1;min-width:140px;display:flex;align-items:center;justify-content:center;gap:8px;background:var(--cream);color:#111;padding:12px;border-radius:9px;font-weight:600;font-size:.86rem;border:1.5px solid var(--border);">
+      📧 Email Us
+    </a>
+
+  </div>
+</div>">
+          <h3>Send Us a Message</h3>
+          <div class="f2">
+            <div class="fg"><label>Full Name *</label><input type="text" placeholder="Your name"/></div>
+            <div class="fg"><label>Email *</label><input type="email" placeholder="your@email.com"/></div>
+          </div>
+          <div class="f2">
+            <div class="fg"><label>Phone</label><input type="tel" placeholder="+256 …"/></div>
+            <div class="fg">
+              <label>Subject *</label>
+              <select>
+                <option value="">Select…</option>
+                <option>General Enquiry</option>
+                <option>Donation</option>
+                <option>Volunteer</option>
+                <option>Partnership</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="fg"><label>Message *</label><textarea placeholder="Write your message…"></textarea></div>
+          <button class="btn btn-green btn-submit" onclick="sendForm(this)">Send Message →</button>
+          <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap">
+            <a href="https://wa.me/256702528923?text=Assalamu%20Alaikum.%20I%20would%20like%20to%20support%20KICYYSO." target="_blank"
+               style="flex:1;min-width:140px;display:flex;align-items:center;justify-content:center;gap:8px;background:#25d366;color:#fff;padding:12px;border-radius:9px;font-weight:700;font-size:.86rem;transition:all .2s">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M20.52 3.47A11.82 11.82 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.12.55 4.19 1.6 6.02L0 24l6.14-1.61A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.21-3.48-8.53zM12 22c-1.85 0-3.66-.5-5.23-1.44l-.37-.22-3.87 1.01 1.03-3.77-.24-.39A9.94 9.94 0 0 1 2 12C2 6.48 6.48 2 12 2c2.67 0 5.18 1.04 7.07 2.93A9.94 9.94 0 0 1 22 12c0 5.52-4.48 10-10 10zm5.5-7.5c-.3-.15-1.77-.87-2.04-.97-.28-.1-.48-.15-.68.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07A8.15 8.15 0 0 1 9.5 12.6c-.38-.66-.08-.97.22-1.27l.49-.56c.12-.14.16-.26.24-.43.08-.18.04-.33-.02-.48-.06-.15-.68-1.63-.93-2.23-.25-.6-.5-.52-.68-.53l-.58-.01c-.2 0-.52.07-.79.36-.27.3-1.03 1-1.03 2.44s1.05 2.83 1.2 3.03c.15.2 2.07 3.16 5.02 4.43.7.3 1.25.48 1.68.62.7.22 1.34.19 1.85.12.56-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35z"/></svg>
+              WhatsApp
+            </a>
+            <a href="mailto:info@kicyyso.org"
+               style="flex:1;min-width:140px;display:flex;align-items:center;justify-content:center;gap:8px;background:var(--cream);color:#111;padding:12px;border-radius:9px;font-weight:600;font-size:.86rem;border:1.5px solid var(--border);transition:all .2s">
+              📧 Email Us
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- VOLUNTEER -->
+      <div class="vol-banner fade">
+        <h3>Become a Volunteer</h3>
+        <p>Give your time and skills to support Uganda's orphaned and vulnerable children. Every hour you contribute changes lives.</p>
+        <a href="https://wa.me/256702528923?text=Assalamu%20Alaikum.%20I%20would%20like%20to%20volunteer%20with%20KICYYSO.%20Please%20let%20me%20know%20how%20I%20can%20help." target="_blank" class="btn btn-gold">Join as a Volunteer →</a>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /contact -->
+
+
+<!-- ████████████████████████████████████████
+     FOOTER
+████████████████████████████████████████ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="f-logo">
+          <div class="f-gem">
+            <img src="logo.png" alt="KICYYSO"/>
+            <span class="f-mono">K</span>
+          </div>
+          <span>KICYYSO</span>
+        </div>
+        <p class="f-brand p">Kalege Islamic Children &amp; Youth Support Organization — uplifting orphaned and vulnerable communities in Nansana, Uganda through compassion, education, and Islamic values.</p>
+        <!-- TikTok: footer only -->
+        <a href="https://tiktok.com/@kicyyso" target="_blank" class="tiktok-link" rel="noopener noreferrer">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(255,255,255,.72)"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.77 0 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 12.67 0V8.69a8.22 8.22 0 0 0 4.79 1.52V6.75a4.85 4.85 0 0 1-1.02-.06z"/></svg>
+          @kicyyso on TikTok
+        </a>
+      </div>
+      <div class="f-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a onclick="go('home')">Home</a></li>
+          <li><a onclick="go('about')">About Us</a></li>
+          <li><a onclick="go('donate')">Donate</a></li>
+          <li><a onclick="go('contact')">Contact</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Contact Us</h4>
+        <p>📍 Nansana, Wakiso District, Uganda</p>
+        <p>📧 <a href="mailto:info@kicyyso.org" class="flink">info@kicyyso.org</a></p>
+        <p>📞 <a href="tel:+256702528923" class="flink">+256 702 528923</a></p>
+        <p>📞 <a href="tel:+256789080848" class="flink">+256 789 080848</a></p>
+        <p>📞 <a href="tel:+256764914223" class="flink">+256 764 914223</a></p>
+        <div style="margin-top:14px">
+          <a href="https://wa.me/256702528923?text=Assalamu%20Alaikum.%20I%20would%20like%20to%20support%20KICYYSO." target="_blank"
+             style="display:inline-flex;align-items:center;gap:7px;background:#25d366;color:#fff;padding:8px 16px;border-radius:8px;font-size:.8rem;font-weight:700">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="#fff"><path d="M20.52 3.47A11.82 11.82 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.12.55 4.19 1.6 6.02L0 24l6.14-1.61A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.21-3.48-8.53zM12 22c-1.85 0-3.66-.5-5.23-1.44l-.37-.22-3.87 1.01 1.03-3.77-.24-.39A9.94 9.94 0 0 1 2 12C2 6.48 6.48 2 12 2c2.67 0 5.18 1.04 7.07 2.93A9.94 9.94 0 0 1 22 12c0 5.52-4.48 10-10 10zm5.5-7.5c-.3-.15-1.77-.87-2.04-.97-.28-.1-.48-.15-.68.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07A8.15 8.15 0 0 1 9.5 12.6c-.38-.66-.08-.97.22-1.27l.49-.56c.12-.14.16-.26.24-.43.08-.18.04-.33-.02-.48-.06-.15-.68-1.63-.93-2.23-.25-.6-.5-.52-.68-.53l-.58-.01c-.2 0-.52.07-.79.36-.27.3-1.03 1-1.03 2.44s1.05 2.83 1.2 3.03c.15.2 2.07 3.16 5.02 4.43.7.3 1.25.48 1.68.62.7.22 1.34.19 1.85.12.56-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35z"/></svg>
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bar">
+      <span>© 2026 KICYYSO. All Rights Reserved.</span>
+      <b>Made with ❤️ for Uganda's Children</b>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ████ FLOATING WHATSAPP ████ -->
+<div id="wa-fab">
+  <a href="https://wa.me/256702528923?text=Assalamu%20Alaikum.%20I%20would%20like%20to%20support%20Kalege%20Islamic%20Children%20%26%20Youth%20Support%20Organization." target="_blank" class="wa-pill" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.52 3.47A11.82 11.82 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.12.55 4.19 1.6 6.02L0 24l6.14-1.61A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.21-3.48-8.53zM12 22c-1.85 0-3.66-.5-5.23-1.44l-.37-.22-3.87 1.01 1.03-3.77-.24-.39A9.94 9.94 0 0 1 2 12C2 6.48 6.48 2 12 2c2.67 0 5.18 1.04 7.07 2.93A9.94 9.94 0 0 1 22 12c0 5.52-4.48 10-10 10zm5.5-7.5c-.3-.15-1.77-.87-2.04-.97-.28-.1-.48-.15-.68.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07A8.15 8.15 0 0 1 9.5 12.6c-.38-.66-.08-.97.22-1.27l.49-.56c.12-.14.16-.26.24-.43.08-.18.04-.33-.02-.48-.06-.15-.68-1.63-.93-2.23-.25-.6-.5-.52-.68-.53l-.58-.01c-.2 0-.52.07-.79.36-.27.3-1.03 1-1.03 2.44s1.05 2.83 1.2 3.03c.15.2 2.07 3.16 5.02 4.43.7.3 1.25.48 1.68.62.7.22 1.34.19 1.85.12.56-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35z"/></svg>
+    <span>Chat on WhatsApp</span>
+  </a>
+</div>
+
+
+<!-- ████████████████████████████████████████
+     JAVASCRIPT
+████████████████████████████████████████ -->
+<script>
+// ── Meta map ──
+const META = {
+  home:    {t:'KICYYSO – Transforming Lives in Uganda | Orphan Support NGO',          d:'KICYYSO supports orphans and vulnerable children in Nansana, Uganda through education, healthcare and Islamic values.'},
+  about:   {t:'About KICYYSO – Our Story, Mission & Values | Uganda NGO',              d:'Learn about KICYYSO, a registered NGO empowering orphaned children in Nansana, Wakiso District, Uganda.'},
+  donate:  {t:'Donate to KICYYSO – Support Orphans in Uganda',                         d:'Donate via MTN MoMo, Airtel Money or bank transfer to support orphaned children in Uganda.'},
+  contact: {t:'Contact KICYYSO – Nansana, Wakiso, Uganda',                             d:'Get in touch with KICYYSO to donate, volunteer, or ask how to help vulnerable children in Uganda.'}
+};
+
+// ── Page navigation ──
+function go(id) {
+  // hide all pages
+  document.querySelectorAll('.page').forEach(function(p){ p.classList.remove('active'); });
+  // show target
+  var pg = document.getElementById('page-' + id);
+  if (!pg) return;
+  pg.classList.add('active');
+  // nav highlight
+  document.querySelectorAll('.nav-links a[id^="nl-"]').forEach(function(a){ a.classList.remove('on'); });
+  var nl = document.getElementById('nl-' + id);
+  if (nl) nl.classList.add('on');
+  // meta
+  var m = META[id] || META.home;
+  document.title = m.t;
+  var desc = document.querySelector('meta[name="description"]');
+  if (desc) desc.content = m.d;
+  // scroll top
+  window.scrollTo({top:0, behavior:'smooth'});
+  // re-run reveal after paint
+  setTimeout(runReveal, 60);
+  // progress bar if donate
+  if (id === 'donate') setTimeout(animPbar, 300);
+}
+
+// ── Mobile menu ──
+function toggleMob() {
+  var m = document.getElementById('mob');
+  var b = document.getElementById('burger');
+  m.classList.toggle('open');
+  b.classList.toggle('open');
+}
+function closeMob() {
+  document.getElementById('mob').classList.remove('open');
+  document.getElementById('burger').classList.remove('open');
+}
+// close mob on outside click
+document.addEventListener('click', function(e) {
+  var nav = document.getElementById('nav');
+  if (!nav.contains(e.target)) closeMob();
+});
+
+// ── Copy button ──
+function cp(id, btn) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  var text = el.textContent.trim();
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(function() { cpDone(btn); });
+  } else {
+    // fallback
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); } catch(e){}
+    document.body.removeChild(ta);
+    cpDone(btn);
+  }
+}
+function cpDone(btn) {
+  var orig = btn.textContent;
+  btn.textContent = 'Copied!'; btn.classList.add('ok');
+  setTimeout(function(){ btn.textContent = orig; btn.classList.remove('ok'); }, 2000);
+}
+
+// ── Form ──
+function sendForm(btn) {
+  btn.textContent = '✓ Message Sent!';
+  btn.style.background = '#237a4e';
+  setTimeout(function(){ btn.textContent = 'Send Message →'; btn.style.background = ''; }, 3200);
+}
+
+// ── Progress bar ──
+function animPbar() {
+  var el = document.getElementById('pbar');
+  if (!el) return;
+  el.style.width = '0';
+  setTimeout(function(){ el.style.width = '65%'; }, 80);
+}
+
+// ── Scroll reveal ──
+var revealObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) {
+      e.target.classList.add('up');
+      revealObserver.unobserve(e.target);
+    }
+  });
+}, {threshold: 0.1, rootMargin: '0px 0px -30px 0px'});
+
+function runReveal() {
+  var els = document.querySelectorAll('.fade:not(.up), .fade-l:not(.up), .fade-r:not(.up)');
+  els.forEach(function(el){ revealObserver.observe(el); });
+}
+
+// ── Navbar scroll shadow ──
+window.addEventListener('scroll', function() {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
+}, {passive: true});
+
+// ── Logo fallback: show monogram "K" if logo image URL is still placeholder ──
+window.addEventListener('DOMContentLoaded', function() {
+  var logoImgs = document.querySelectorAll('.logo-gem img, .f-gem img');
+  logoImgs.forEach(function(img) {
+    var placeholder = img.src.indexOf('LOGO_IMAGE_URL_HERE') !== -1 || img.src === '' || img.src === window.location.href;
+    if (placeholder) {
+      img.style.display = 'none';
+      var mono = img.nextElementSibling;
+      if (mono) mono.style.display = 'flex';
+    } else {
+      img.onerror = function() {
+        this.style.display = 'none';
+        var mono = this.nextElementSibling;
+        if (mono) mono.style.display = 'flex';
+      };
+    }
+  });
+  runReveal();
+});
+</script>
+</body>
+</html>
