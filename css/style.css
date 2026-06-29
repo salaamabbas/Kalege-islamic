@@ -258,7 +258,7 @@ p.sub-w{color:rgba(255,255,255,.76)}
 ============================================================ */
 .orphan-sec{
   position:relative;overflow:hidden;
-  background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmCw_2YDrRz2rk1ng2TR1VdD3WOjUhKBY4zy2V96ohxg&s=10');
+  background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvnndLAgA7aykQtofjBFqmhwc1SWitbnGdPCeHuEx0kA&s=10');
   background-size:cover;background-position:center;
   background-color:var(--g1);
 }
@@ -287,7 +287,7 @@ p.sub-w{color:rgba(255,255,255,.76)}
 ============================================================ */
 .cta-sec{
   position:relative;overflow:hidden;text-align:center;
-  background-image:url('CTA_BG_IMAGE_URL_HERE');
+  background-image:url('https://www.globalgiving.org/pfil/40285/pict_large.jpg');
   background-size:cover;background-position:center;
   background-color:#071e10;
   padding:96px 0;
