@@ -258,7 +258,7 @@ p.sub-w{color:rgba(255,255,255,.76)}
 ============================================================ */
 .orphan-sec{
   position:relative;overflow:hidden;
-  background-image:url('ORPHAN_BG_IMAGE_URL_HERE');
+  background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmCw_2YDrRz2rk1ng2TR1VdD3WOjUhKBY4zy2V96ohxg&s=10');
   background-size:cover;background-position:center;
   background-color:var(--g1);
 }
